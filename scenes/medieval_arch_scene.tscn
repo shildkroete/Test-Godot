@@ -30,8 +30,11 @@ size = Vector3(4.8, 0.6, 0.6)
 size = Vector3(4.8, 0.6, 0.6)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape_Player"]
-radius = 0.4
-height = 1.4
+radius = 0.7
+height = 1.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_Player"]
+size = Vector3(1.6, 1.8, 1.6)
 
 [node name="World" type="Node3D"]
 
@@ -89,12 +92,12 @@ script = ExtResource("1")
 shape = SubResource("CapsuleShape_Player")
 
 [node name="Head" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 current = true
 fov = 75.0
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-mesh = SubResource("BoxMesh_Pillar")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("BoxMesh_Player")
